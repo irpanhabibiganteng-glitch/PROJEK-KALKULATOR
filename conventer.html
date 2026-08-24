@@ -1,0 +1,185 @@
+```html
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converter Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    body.page-loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+
+  <div class="w-[590px] max-w-full h-[536px] bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)] border-2 border-black">
+
+    <!-- Navbar -->
+    <div class="h-[51px] flex items-center border-b border-[#202020] bg-black">
+
+      <div class="w-[52px] h-full flex items-center justify-center shrink-0 cursor-pointer">
+        <div class="w-[18px] h-[14px] flex flex-col justify-between">
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+        </div>
+      </div>
+
+      <div class="flex items-center h-full flex-1 text-[12px] whitespace-nowrap">
+
+        <a href="./standard.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Standard</a>
+
+        <a href="./scientific.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Scientific</a>
+
+        <a href="./graph.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Graph</a>
+
+        <a href="./programer.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Programmer</a>
+
+        <a href="./converter.html" class="relative flex-1 h-full flex items-center justify-center text-white">
+          Converter
+          <span class="absolute left-1/2 -translate-x-1/2 bottom-[9px] w-[60px] h-[2px] bg-blue-500 rounded-full"></span>
+        </a>
+
+        <a href="./history.html" class="flex-1 text-center text-gray-400 hover:text-white transition">History</a>
+
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex h-[483px]">
+
+      <!-- Sidebar -->
+      <aside class="w-[166px] shrink-0 bg-black">
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 bg-[#20419c] text-white text-left">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 16L16 3L21 8L8 21L3 21V16Z"/>
+            <path d="M13 6L18 11"/>
+            <path d="M10 9L13 12"/>
+            <path d="M7 12L10 15"/>
+          </svg>
+          <span class="text-[14px]">Length</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">♙</span>
+          <span class="text-[14px]">Weight</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">♧</span>
+          <span class="text-[14px]">Temperature</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">◇</span>
+          <span class="text-[14px]">Volume</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">□</span>
+          <span class="text-[14px]">Area</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">◉</span>
+          <span class="text-[14px]">Speed</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">◷</span>
+          <span class="text-[14px]">Time</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[18px]">▤</span>
+          <span class="text-[14px]">Data</span>
+        </button>
+
+        <button class="w-full h-[53px] flex items-center gap-4 px-5 text-gray-300 hover:bg-[#111] transition text-left">
+          <span class="text-[20px]">ϟ</span>
+          <span class="text-[14px]">Energy</span>
+        </button>
+
+      </aside>
+
+      <!-- Main -->
+      <main class="flex-1 bg-black px-[25px] pt-[38px]">
+
+        <!-- From -->
+        <div>
+          <div class="text-[20px] text-gray-700 font-normal mb-[3px]">From</div>
+
+          <div class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
+            10
+          </div>
+
+          <button class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
+            <span>Kilometer</span>
+
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="text-gray-600">
+              <path d="M6 9L12 15L18 9"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="my-[29px] h-px bg-[#202020]"></div>
+
+        <!-- To -->
+        <div>
+          <div class="text-[20px] text-gray-700 font-normal mb-[3px]">To</div>
+
+          <div class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
+            6.21371
+          </div>
+
+          <button class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
+            <span>Mile</span>
+
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="text-gray-600">
+              <path d="M6 9L12 15L18 9"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mt-[37px] text-[16px] text-gray-800">
+          1 Kilometer = 0.621371 Mile
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("page-loaded");
+
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          if (!href || href.startsWith("#")) return;
+
+          e.preventDefault();
+          document.body.classList.remove("page-loaded");
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 350);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+```
