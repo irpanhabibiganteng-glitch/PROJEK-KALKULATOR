@@ -12,6 +12,8 @@ let history = []; // dipakai juga oleh History Mode
 function pressKey(key) {
   if (displayValue === "0" && key !== ".") {
     displayValue = key;
+  } else if (key === "." && displayValue.includes(".")) {
+    // jangan tambahkan titik kedua
   } else {
     displayValue += key;
   }
