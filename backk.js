@@ -10,13 +10,18 @@ let history = []; // dipakai juga oleh History Mode
 // Dipanggil setiap tombol angka/operator diklik
 // Contoh HTML: <button onclick="pressKey('7')">7</button>
 function pressKey(key) {
+  if (displayValue === "Error") {
+    displayValue = "0";
+  }
+
   if (displayValue === "0" && key !== ".") {
     displayValue = key;
   } else if (key === "." && displayValue.includes(".")) {
-    // jangan tambahkan titik kedua
+    return;
   } else {
     displayValue += key;
   }
+
   updateDisplay(displayValue);
 }
 // Tombol Clear (C) - hapus semua
