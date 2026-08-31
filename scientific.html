@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    body {
+        opacity: 0;
+        transition: opacity 350ms ease-in-out;
+    }
+
+    body.page-loaded {
+        opacity: 1;
+    }
+</style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+
+<div class="flex w-[480px] max-w-full bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] flex-col md:flex-row">
+
+    <!-- CALCULATOR -->
+    <div class="flex-[1.42] p-[22px] pb-5 flex flex-col min-w-0">
+
+        <!-- NAVBAR -->
+        <div class="flex items-center justify-between mb-6">
+
+            <div class="flex items-center gap-5">
+
+                <!-- MENU -->
+                <div class="w-[18px] h-[13px] flex flex-col justify-between cursor-pointer">
+                    <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
+                    <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
+                    <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
+                </div>
+
+                <!-- NAVIGATION -->
+                <div class="flex gap-3.5 text-[12px] flex-wrap">
+
+                    <!-- STANDARD -->
+                    <a href="./standard.html"
+                       class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+                        Standard
+                    </a>
+
+                    <!-- SCIENTIFIC ACTIVE -->
+                    <span class="text-white cursor-pointer pb-2 relative after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-3.5 after:h-0.5 after:bg-blue-500 after:rounded-full">
+                        Scientific
+                    </span>
+
+                    <a href="./graph.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+                        Graph
+                    </a>
+
+                    <span class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+                        Programmer
+                    </span>
+
+                    <span class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+                        Converter
+                    </span>
+
+                    
+                    <span class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+                        History
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DISPLAY -->
+        <div class="text-right mb-[18px] min-h-[74px]">
+
+            <div class="text-[13px] text-[#6f7280] mb-1.5 tracking-wide">
+                1 + 1
+            </div>
+
+            <div class="text-[40px] font-medium text-white tracking-wide">
+                2
+            </div>
+
+        </div>
+
+
+        <!-- SCIENTIFIC BUTTONS -->
+        <div class="grid grid-cols-8 gap-2 flex-1">
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">2nd</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">mr</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">m+</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">mc</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">e</button>
+
+            <button class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors">
+                CE
+            </button>
+
+            <button class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors">
+                C
+            </button>
+
+            <button class="rounded-[10px] bg-[#4a2430] text-[#f3b6c2] text-sm hover:bg-[#5a2c3a] transition-colors">
+                &#9003;
+            </button>
+
+        
+            <!-- ROW 2 -->
+            <button class="rounded-[20px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">sin</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">cos</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">tan</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">cot</button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">(</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">)</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">%</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                &divide;
+            </button>
+         
+
+
+            <!-- ROW 3 -->
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">sec</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">csc</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">&radic;x</button>
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">&#8731;x</button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">7</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">8</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">9</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                &times;
+            </button>
+
+
+            <!-- ROW 4 -->
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                x<sup>2</sup>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                x<sup>3</sup>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                x<sup>y</sup>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                e<sup>x</sup>
+            </button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">4</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">5</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">6</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                &minus;
+            </button>
+
+
+            <!-- ROW 5 -->
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                10<sup>x</sup>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                ln
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                2<sup>x</sup>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                |x|
+            </button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">1</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">2</button>
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">3</button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                +
+            </button>
+
+
+            <!-- ROW 6 -->
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                Deg
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                log<sub>b</sub>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                log<sub>x</sub>
+            </button>
+
+            <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">
+                x!
+            </button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                &plusmn;
+            </button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] font-medium text-[15px] hover:bg-[#2b2c36] transition-colors">
+                0
+            </button>
+
+            <button class="rounded-[10px] bg-[#23242c] text-[#f2f2f4] hover:bg-[#2b2c36] transition-colors">
+                .
+            </button>
+
+            <button class="rounded-[10px] bg-[#3b7cf6] text-white font-semibold text-[17px] hover:bg-[#4a86f8] transition-colors">
+                =
+            </button>
+
+        </div>
+    </div>
+
+
+
+<!-- PAGE TRANSITION -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Fade in halaman
+    document.body.classList.add("page-loaded");
+
+    // Tangkap semua link
+    document.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function (e) {
+
+            const href = this.getAttribute("href");
+
+            if (!href || href.startsWith("#")) {
+                return;
+            }
+
+            e.preventDefault();
+
+            // Fade out
+            document.body.classList.remove("page-loaded");
+
+            // Pindah setelah animasi selesai
+            setTimeout(function () {
+                window.location.href = href;
+            }, 350);
+
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>

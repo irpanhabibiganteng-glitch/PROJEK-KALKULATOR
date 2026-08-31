@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Mode - Calculator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            opacity: 0;
+            transition: opacity 350ms ease-in-out;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+        }
+
+        .graph-bg {
+            background-size: 35px 35px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #292b33;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)]">
+
+    <div class="w-[700px] h-[620px] max-w-full max-h-[calc(100vh-40px)] bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] flex flex-col">
+
+        <!-- HEADER -->
+        <header class="flex items-center px-[22px] pt-[22px] pb-[18px]">
+            <div class="flex items-center gap-5 w-full">
+
+                <!-- MENU BUTTON -->
+                <button class="w-[18px] h-[18px] flex flex-col justify-center gap-[4px] shrink-0 cursor-pointer group">
+                    <span class="block h-[2px] w-full rounded bg-[#8a8d98] group-hover:bg-white transition-colors"></span>
+                    <span class="block h-[2px] w-full rounded bg-[#8a8d98] group-hover:bg-white transition-colors"></span>
+                    <span class="block h-[2px] w-full rounded bg-[#8a8d98] group-hover:bg-white transition-colors"></span>
+                </button>
+
+                <!-- NAVIGATION -->
+                <nav class="flex items-center gap-[21px] text-[12px] whitespace-nowrap">
+                    <a href="./standard.html" class="text-[#6f7280] hover:text-white transition-colors duration-300 pb-2">
+                        Standard
+                    </a>
+                    <a href="./scientific.html" class="text-[#6f7280] hover:text-white transition-colors duration-300 pb-2">
+                        Scientific
+                    </a>
+                    <span class="text-white relative pb-2">
+                        Graph
+                        <span class="absolute left-0 right-0 -bottom-[10px] h-[2px] bg-blue-500 rounded-full"></span>
+                    </span>
+                    <a href="./programer.html" class="text-[#6f7280] hover:text-white transition-colors duration-300 pb-2 cursor-pointer">
+                        Programmer
+                    </a>
+                    <span class="text-[#6f7280] hover:text-white transition-colors duration-300 pb-2 cursor-pointer">
+                        Converter
+                    </span>
+                    <span class="text-[#6f7280] hover:text-white transition-colors duration-300 pb-2 cursor-pointer pr-1">
+                        History
+                    </span>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- MAIN CONTAINER -->
+        <div class="flex-1 min-h-0 mx-[16px] mb-[16px] rounded-[14px] overflow-hidden bg-[#0d0e12] border border-[#202127] flex">
+
+            <!-- SIDEBAR -->
+            <aside class="w-[175px] shrink-0 border-r border-[#24252c] bg-[#111216] flex flex-col">
+                <div class="px-3 pt-4 pb-3 border-b border-[#24252c]">
+                    <div class="text-[11px] font-medium text-[#858894] uppercase tracking-wider">
+                        Equations
+                    </div>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-2.5 space-y-2">
+                    <!-- EQUATION 1 -->
+                    <div class="flex items-center gap-2 p-2 rounded-[9px] bg-[#181a20] border border-[#272a33]">
+                        <div class="w-5 h-5 shrink-0 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-check text-[8px]"></i>
+                        </div>
+                        <span class="font-mono text-[11px] text-[#e4e5e8]">y = sin(x)</span>
+                    </div>
+
+                    <!-- EQUATION 2 -->
+                    <div class="flex items-center gap-2 p-2 rounded-[9px] bg-[#181a20] border border-[#272a33]">
+                        <div class="w-5 h-5 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-check text-[8px]"></i>
+                        </div>
+                        <span class="font-mono text-[11px] text-[#e4e5e8]">y = x²</span>
+                    </div>
+
+                    <!-- EQUATION 3 -->
+                    <div class="flex items-center gap-2 p-2 rounded-[9px] bg-[#181a20] border border-[#272a33]">
+                        <div class="w-5 h-5 shrink-0 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-check text-[8px]"></i>
+                        </div>
+                        <span class="font-mono text-[11px] text-[#e4e5e8]">y = cos(x)</span>
+                    </div>
+
+                    <!-- EQUATION BUTTON -->
+                    <button class="w-full flex items-center gap-2 px-2 py-2.5 mt-1 rounded-[9px] text-[#747783] hover:text-white hover:bg-[#1b1d23] transition-colors text-[11px]">
+                        <i class="fa-solid fa-plus text-[9px]"></i>
+                        <span>Add equation</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- GRAPH CANVAS AREA -->
+            <main class="flex-1 min-w-0 relative bg-[#0d0e12]">
+
+                <!-- GRAPH CONTROLS -->
+                <div class="absolute top-3 right-3 z-10 flex items-center gap-1 bg-[#13151b]/90 backdrop-blur-md border border-[#292c34] rounded-[9px] p-1 shadow-lg">
+                    <button class="w-7 h-7 flex items-center justify-center text-[#777b87] hover:text-white hover:bg-[#22252c] rounded-[6px] transition-colors">
+                        <i class="fa-solid fa-plus text-[9px]"></i>
+                    </button>
+                    <button class="w-7 h-7 flex items-center justify-center text-[#777b87] hover:text-white hover:bg-[#22252c] rounded-[6px] transition-colors">
+                        <i class="fa-solid fa-minus text-[9px]"></i>
+                    </button>
+                    <button class="w-7 h-7 flex items-center justify-center text-[#777b87] hover:text-white hover:bg-[#22252c] rounded-[6px] transition-colors">
+                        <i class="fa-solid fa-rotate text-[9px]"></i>
+                    </button>
+                </div>
+
+                <!-- SVG GRAPH -->
+                <div class="w-full h-full relative overflow-hidden graph-bg">
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
+
+                        <!-- X AXIS -->
+                        <line x1="35" y1="280" x2="465" y2="280" stroke="#4b5563" stroke-width="1.2" />
+                        <polygon points="465,277 472,280 465,283" fill="#4b5563" />
+                        <text x="478" y="284" fill="#9ca3af" font-size="12" font-family="sans-serif">x</text>
+
+                        <!-- Y AXIS -->
+                        <line x1="250" y1="35" x2="250" y2="465" stroke="#4b5563" stroke-width="1.2" />
+                        <polygon points="247,35 250,28 253,35" fill="#4b5563" />
+                        <text x="246" y="22" fill="#9ca3af" font-size="12" font-family="sans-serif">y</text>
+
+                        <!-- Y MARKS -->
+                        <text x="238" y="135" fill="#777b86" font-size="11" text-anchor="end">2</text>
+                        <line x1="246" y1="130" x2="254" y2="130" stroke="#4b5563" />
+
+                        <text x="238" y="210" fill="#777b86" font-size="11" text-anchor="end">1</text>
+                        <line x1="246" y1="205" x2="254" y2="205" stroke="#4b5563" />
+
+                        <text x="238" y="284" fill="#777b86" font-size="11" text-anchor="end">0</text>
+
+                        <text x="238" y="360" fill="#777b86" font-size="11" text-anchor="end">-1</text>
+                        <line x1="246" y1="355" x2="254" y2="355" stroke="#4b5563" />
+
+                        <text x="238" y="435" fill="#777b86" font-size="11" text-anchor="end">-2</text>
+                        <line x1="246" y1="430" x2="254" y2="430" stroke="#4b5563" />
+
+                        <!-- X MARKS -->
+                        <text x="100" y="298" fill="#777b86" font-size="11" text-anchor="middle">-4</text>
+                        <line x1="100" y1="276" x2="100" y2="284" stroke="#4b5563" />
+
+                        <text x="175" y="298" fill="#777b86" font-size="11" text-anchor="middle">-2</text>
+                        <line x1="175" y1="276" x2="175" y2="284" stroke="#4b5563" />
+
+                        <text x="325" y="298" fill="#777b86" font-size="11" text-anchor="middle">2</text>
+                        <line x1="325" y1="276" x2="325" y2="284" stroke="#4b5563" />
+
+                        <text x="400" y="298" fill="#777b86" font-size="11" text-anchor="middle">4</text>
+                        <line x1="400" y1="276" x2="400" y2="284" stroke="#4b5563" />
+
+                        <!-- GRAPH PATHS -->
+                        <path d="M 45 280 C 75 225, 105 225, 135 280 C 165 335, 195 335, 225 280 C 255 225, 285 225, 315 280 C 345 335, 375 335, 405 280 C 435 225, 455 225, 470 280" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M 170 70 Q 250 280 330 70" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M 45 205 C 80 150, 115 150, 150 205 C 185 260, 215 260, 250 205 C 285 150, 315 150, 350 205 C 385 260, 420 260, 470 205" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fade in
+            document.body.classList.add("page-loaded");
+
+            // Tangkap semua link
+            document.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    const href = this.getAttribute("href");
+
+                    if (!href || href.startsWith("#")) return;
+
+                    e.preventDefault();
+
+                    // Fade out
+                    document.body.classList.remove("page-loaded");
+
+                    setTimeout(function () {
+                        window.location.href = href;
+                    }, 350);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

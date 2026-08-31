@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmer Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { opacity: 0; transition: opacity 0.35s ease; }
+      body.page-loaded { opacity: 1; }
+    </style>
+  </head>
+  <body class="min-h-screen flex items-center justify-center p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+    <div class="w-[580px] max-w-full bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)]">
+      <div class="flex items-center gap-6 px-7 pt-5 pb-4">
+        <div class="w-[18px] h-[14px] flex flex-col justify-between shrink-0 cursor-pointer">
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+          <span class="h-[2px] bg-gray-400 rounded"></span>
+        </div>
+        <div class="flex items-center gap-7 text-[12px] whitespace-nowrap">
+          <a href="./standard.html" class="text-gray-400 hover:text-white transition">Standard</a>
+          <a href="./scientific.html" class="text-gray-400 hover:text-white transition">Scientific</a>
+          <a href="./graph.html" class="text-gray-400 hover:text-white transition">Graph</a>
+          <a href="./programer.html" class="relative text-white pb-2">
+            Programmer
+            <span class="absolute left-0 right-0 -bottom-1 h-[2px] bg-blue-500 rounded-full"></span>
+          </a>
+          <a href="./converter.html" class="text-gray-400 hover:text-white transition">Converter</a>
+          <a href="./history.html" class="text-gray-400 hover:text-white transition">History</a>
+        </div>
+      </div>
+
+      <div class="h-[188px] border-b border-[#202020] px-7 flex flex-col justify-end items-end pb-5">
+        <div class="text-[12px] text-gray-600 mb-2">1 + 1</div>
+        <div class="text-[38px] text-white font-medium">2</div>
+      </div>
+
+      <div class="px-5 py-5">
+        <div class="flex items-center justify-between mb-3">
+          <button class="text-[11px] text-gray-500 hover:text-white transition">QWORD⌄</button>
+          <span class="text-[11px] text-gray-700 mr-2">MS</span>
+        </div>
+
+        <div class="grid grid-cols-8 gap-1.5">
+          <div></div><div></div><div></div><div></div><div></div>
+          <button class="h-[34px] rounded-[6px] bg-[#142c63] text-blue-100 text-[13px] hover:bg-[#1d3d82] transition">CE</button>
+          <button class="h-[34px] rounded-[6px] bg-[#142c63] text-blue-100 text-[13px] hover:bg-[#1d3d82] transition">C</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">&#9003;</button>
+
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">A</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">B</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">C</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">D</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">E</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] col-span-2 hover:bg-[#666] transition">F</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[14px] hover:bg-[#666] transition">÷</button>
+
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">&lt;&lt;</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">&gt;&gt;</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">(</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">)</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">7</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">8</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">9</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[14px] hover:bg-[#666] transition">×</button>
+
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">AND</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">OR</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">XOR</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">NOT</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">4</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">5</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">6</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[14px] hover:bg-[#666] transition">−</button>
+
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[16px] hover:bg-[#666] transition">↑</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[16px] hover:bg-[#666] transition">↓</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">−</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[15px] hover:bg-[#666] transition">±</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">1</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">2</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">3</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[14px] hover:bg-[#666] transition">+</button>
+
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] col-span-4 hover:bg-[#666] transition">0</button>
+          <button class="h-[34px] rounded-[6px] bg-[#555] text-black text-[13px] hover:bg-[#666] transition">.</button>
+          <div></div><div></div>
+          <button class="h-[34px] rounded-[6px] bg-[#245fe0] text-black font-semibold text-[15px] hover:bg-[#3472f2] transition">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("page-loaded");
+    
+        document.querySelectorAll("a").forEach((link) => {
+
+          link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+
+            if (!href || href.startsWith("#")) return;
+            e.preventDefault();
+            
+            document.body.classList.remove("page-loaded");
+            setTimeout(() => { window.location.href = href; }, 350);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
