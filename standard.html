@@ -1,285 +1,162 @@
+```html
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Standard Calculator</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 350ms ease-in-out;
+    }
 
-    <style>
-      body {
-        opacity: 0;
-        transition: opacity 350ms ease-in-out;
-      }
+    body.page-loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
 
-      body.page-loaded {
-        opacity: 1;
-      }
-    </style>
-  </head>
+<body class="min-h-screen flex items-center justify-center p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
 
-  <body
-    class="min-h-screen flex items-center justify-center p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans"
-  >
-    <div
-      class="w-[440px] max-w-full bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] p-[22px] pb-5 flex flex-col"
-    >
-      <!-- NAVBAR -->
-      <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-4">
-          <!-- MENU -->
-          <div
-            class="w-[18px] h-[13px] flex flex-col justify-between cursor-pointer shrink-0"
-          >
-            <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
-            <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
-            <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
-          </div>
+  <div class="w-[440px] max-w-full bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] p-[22px] pb-5 flex flex-col">
 
-          <!-- NAVIGATION -->
-          <div class="flex gap-3.5 text-[12px] flex-wrap">
-            <!-- STANDARD ACTIVE -->
-            <span
-              class="text-white cursor-pointer pb-2 relative after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-2.5 after:h-0.5 after:bg-blue-500 after:rounded-full"
-            >
-              Standard
-            </span>
+    <!-- NAVBAR -->
+    <div class="flex items-center justify-between mb-6">
 
-            <!-- SCIENTIFIC -->
-            <a
-              href="./scientific.html"
-              class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300"
-            >
-              Scientific
-            </a>
+      <div class="flex items-center gap-4">
 
-            <a
-              href="./graph.html"
-              class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300"
-            >
-              Graph
-            </a>
-
-            <span
-              class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300"
-            >
-              Programmer
-            </span>
-
-            <span
-              class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300"
-            >
-              Converter
-            </span>
-
-            <span
-              class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300"
-            >
-              History
-            </span>
-          </div>
+        <!-- MENU -->
+        <div class="w-[18px] h-[13px] flex flex-col justify-between cursor-pointer shrink-0">
+          <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
+          <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
+          <span class="block h-[2px] rounded bg-[#8a8d98]"></span>
         </div>
 
-        <!-- HISTORY ICON -->
-      </div>
+        <!-- NAVIGATION -->
+        <div class="flex gap-3.5 text-[12px] flex-wrap">
 
-      <!-- DISPLAY -->
-      <div class="text-right mb-[14px] min-h-[74px]">
-        <div
-          id="expression"
-          class="text-[13px] text-[#6f7280] mb-1.5 tracking-wide"
-        >
-          &nbsp;
-        </div>
+          <!-- STANDARD ACTIVE -->
+          <span class="text-white cursor-pointer pb-2 relative after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-2.5 after:h-0.5 after:bg-blue-500 after:rounded-full">
+            Standard
+          </span>
 
-        <div
-          id="result"
-          class="text-[40px] font-medium text-white tracking-wide truncate"
-        >
-          0
+          <!-- SCIENTIFIC -->
+          <a href="./scientific.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+            Scientific
+          </a>
+
+          <!-- GRAPH -->
+          <a href="./graph.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+            Graph
+          </a>
+
+          <!-- PROGRAMMER -->
+          <a href="./programer.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+            Programmer
+          </a>
+
+          <!-- CONVERTER -->
+          <a href="./conventer.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+            Converter
+          </a>
+
+          <!-- HISTORY -->
+          <a href="./history.html" class="text-[#6f7280] cursor-pointer pb-2 hover:text-white transition-colors duration-300">
+            History
+          </a>
+
         </div>
       </div>
 
-      <!-- MEMORY -->
-      <div class="grid grid-cols-5 gap-2 mb-2">
-        <button
-          class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors"
-        >
-          MC
-        </button>
-
-        <button
-          class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors"
-        >
-          MR
-        </button>
-
-        <button
-          class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors"
-        >
-          M+
-        </button>
-
-        <button
-          class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors"
-        >
-          M-
-        </button>
-
-        <button
-          class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors"
-        >
-          MS
-        </button>
-      </div>
-
-      <!-- BUTTONS -->
-      <div class="grid grid-cols-4 gap-2 flex-1">
-        <!-- ROW 1 -->
-        <button
-          class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors"
-        >
-          %
-        </button>
-
-        <button
-          class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors"
-        >
-          CE
-        </button>
-
-        <button
-          class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors"
-        >
-          C
-        </button>
-
-        <button
-          class="rounded-[10px] bg-[#4a2430] text-[#f3b6c2] text-sm hover:bg-[#5a2c3a] transition-colors"
-        >
-          &#9003;
-        </button>
-
-        <!-- ROW 2 -->
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          7
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          8
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          9
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors"
-        >
-          &divide;
-        </button>
-
-        <!-- ROW 3 -->
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          4
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          5
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          6
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors"
-        >
-          &times;
-        </button>
-
-        <!-- ROW 4 -->
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          1
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          2
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          3
-        </button>
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors"
-        >
-          &minus;
-        </button>
-
-        <!-- ROW 5 -->
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          &plusmn;
-        </button>
-
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          0
-        </button>
-
-        <button
-          class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors"
-        >
-          .
-        </button>
-
-        <!-- Sama dengan -->
-        <button
-          class="rounded-[10px] text-white bg-[#3b7cf6] hover:bg-[#4a86f8] transition-colors"
-        >
-          =
-        </button>
-      </div>
     </div>
 
-    <!-- PAGE TRANSITION -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Fade in saat halaman dibuka
-        document.body.classList.add("page-loaded");
+    <!-- DISPLAY -->
+    <div class="text-right mb-[14px] min-h-[74px]">
 
-        // Fade out sebelum pindah halaman
-        document.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
+      <div id="expression" class="text-[13px] text-[#6f7280] mb-1.5 tracking-wide">
+        &nbsp;
+      </div>
 
-            if (!href || href.startsWith("#")) {
-              return;
-            }
+      <div id="result" class="text-[40px] font-medium text-white tracking-wide truncate">
+        0
+      </div>
 
-            e.preventDefault();
+    </div>
 
-            document.body.classList.remove("page-loaded");
+    <!-- MEMORY -->
+    <div class="grid grid-cols-5 gap-2 mb-2">
 
-            setTimeout(function () {
-              window.location.href = href;
-            }, 350);
-          });
+      <button class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors">MC</button>
+      <button class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors">MR</button>
+      <button class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors">M+</button>
+      <button class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors">M-</button>
+      <button class="rounded-[10px] text-[#8a8d98] text-[12.5px] py-2 hover:bg-[#1d1e26] transition-colors">MS</button>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="grid grid-cols-4 gap-2 flex-1">
+
+      <!-- ROW 1 -->
+      <button class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors">%</button>
+      <button class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors">CE</button>
+      <button class="rounded-[10px] bg-[#24406e] text-[#cfe0ff] font-medium text-sm hover:bg-[#2b4a80] transition-colors">C</button>
+      <button class="rounded-[10px] bg-[#4a2430] text-[#f3b6c2] text-sm hover:bg-[#5a2c3a] transition-colors">&#9003;</button>
+
+      <!-- ROW 2 -->
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">7</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">8</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">9</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors">&divide;</button>
+
+      <!-- ROW 3 -->
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">4</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">5</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">6</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors">&times;</button>
+
+      <!-- ROW 4 -->
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">1</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">2</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">3</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white hover:bg-[#2b2c36] transition-colors">&minus;</button>
+
+      <!-- ROW 5 -->
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">&plusmn;</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">0</button>
+      <button class="rounded-[10px] bg-[#23242c] text-white text-[17px] hover:bg-[#2b2c36] transition-colors">.</button>
+
+      <!-- SAMA DENGAN -->
+      <button class="rounded-[10px] text-white bg-[#3b7cf6] hover:bg-[#4a86f8] transition-colors">=</button>
+
+    </div>
+  </div>
+
+  <!-- PAGE TRANSITION -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("page-loaded");
+
+      document.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+
+          if (!href || href.startsWith("#")) return;
+
+          e.preventDefault();
+          document.body.classList.remove("page-loaded");
+
+          setTimeout(function () {
+            window.location.href = href;
+          }, 350);
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+
+</body>
 </html>
+```
