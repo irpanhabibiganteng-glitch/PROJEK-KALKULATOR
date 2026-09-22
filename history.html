@@ -58,7 +58,7 @@
       <h1 class="text-[18px] md:text-[21px] font-normal text-white mb-[14px] md:mb-[21px]">History</h1>
 
       <!-- HISTORY BOX -->
-      <div class="h-[260px] md:h-[336px] w-full rounded-[11px] border border-[#303030] bg-black overflow-hidden overflow-y-auto">
+      <div class="history-list h-[260px] md:h-[336px] w-full rounded-[11px] border border-[#303030] bg-black overflow-hidden overflow-y-auto">
 
         <!-- HISTORY ITEM 1 -->
         <div class="flex items-center justify-between gap-2 px-[12px] pt-[13px]">
@@ -96,12 +96,12 @@
       <div class="h-auto md:h-[61px] -mx-[8px] md:-mx-[16px] mt-[18px] border-t border-[#202020] flex flex-col gap-3 py-3 text-center sm:flex-row sm:items-center sm:justify-between px-4 md:px-[23px]">
 
         <!-- CLEAR HISTORY -->
-        <button class="text-[14px] text-red-500 hover:text-red-400 transition">
+        <button data-action="clear-history" class="text-[14px] text-red-500 hover:text-red-400 transition">
           Clear History
         </button>
 
         <!-- EXPORT -->
-        <button class="flex items-center justify-center gap-[12px] text-[14px] text-blue-500 hover:text-blue-400 transition">
+        <button data-action="export-history" class="flex items-center justify-center gap-[12px] text-[14px] text-blue-500 hover:text-blue-400 transition">
           <span>Export</span>
 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -114,6 +114,8 @@
       </div>
     </main>
   </div>
+
+  <script src="./history.js"></script>
 
   <!-- PAGE TRANSITION -->
   <script>
