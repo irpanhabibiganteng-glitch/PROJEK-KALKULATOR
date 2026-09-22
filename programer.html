@@ -26,14 +26,14 @@
             Programmer
             <span class="absolute left-0 right-0 -bottom-1 h-[2px] bg-blue-500 rounded-full"></span>
           </a>
-          <a href="./converter.html" class="text-gray-400 hover:text-white transition">Converter</a>
+          <a href="./conventer.html" class="text-gray-400 hover:text-white transition">Converter</a>
           <a href="./history.html" class="text-gray-400 hover:text-white transition">History</a>
         </div>
       </div>
 
       <div class="h-[188px] border-b border-[#202020] px-7 flex flex-col justify-end items-end pb-5">
-        <div class="text-[12px] text-gray-600 mb-2">1 + 1</div>
-        <div class="text-[38px] text-white font-medium">2</div>
+        <div id="expression" class="text-[12px] text-gray-600 mb-2">&nbsp;</div>
+        <div id="result" class="text-[38px] text-white font-medium">0</div>
       </div>
 
       <div class="px-5 py-5">
@@ -90,6 +90,8 @@
         </div>
       </div>
     </div>
+
+    <script src="./programer.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {

@@ -44,7 +44,7 @@
 
         <a href="./programer.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Programmer</a>
 
-        <a href="./converter.html" class="relative flex-1 h-full flex items-center justify-center text-white">
+        <a href="./conventer.html" class="relative flex-1 h-full flex items-center justify-center text-white">
           Converter
           <span class="absolute left-1/2 -translate-x-1/2 bottom-[9px] w-[60px] h-[2px] bg-blue-500 rounded-full"></span>
         </a>
@@ -119,11 +119,11 @@
         <div>
           <div class="text-[20px] text-gray-700 font-normal mb-[3px]">From</div>
 
-          <div class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
+          <div id="fromValue" class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
             10
           </div>
 
-          <button class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
+          <button id="fromUnit" data-unit="kilometer" class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
             <span>Kilometer</span>
 
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="text-gray-600">
@@ -138,11 +138,11 @@
         <div>
           <div class="text-[20px] text-gray-700 font-normal mb-[3px]">To</div>
 
-          <div class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
+          <div id="toValue" class="text-[42px] text-white font-light leading-[1.15] tracking-[-1px] mb-[7px]">
             6.21371
           </div>
 
-          <button class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
+          <button id="toUnit" data-unit="mile" class="w-full h-[46px] rounded-[6px] bg-[#242222] px-5 flex items-center justify-between text-[16px] text-gray-200 hover:bg-[#2b2929] transition">
             <span>Mile</span>
 
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="text-gray-600">
@@ -158,6 +158,8 @@
       </main>
     </div>
   </div>
+
+  <script src="./conventor.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {

@@ -41,7 +41,7 @@
 
         <a href="./programer.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Programmer</a>
 
-        <a href="./converter.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Converter</a>
+        <a href="./conventer.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Converter</a>
 
         <a href="./history.html" class="relative flex-1 h-full flex items-center justify-center text-white">
           History
@@ -58,50 +58,19 @@
       <h1 class="text-[21px] font-normal text-white mb-[21px]">History</h1>
 
       <!-- HISTORY BOX -->
-      <div class="h-[336px] w-full rounded-[11px] border border-[#303030] bg-black overflow-hidden">
-
-        <!-- HISTORY ITEM 1 -->
-        <div class="flex items-center justify-between px-[12px] pt-[13px]">
-          <span class="text-[15px] text-[#666]">(256 + 123) x (645 + 25)</span>
-          <span class="text-[15px] text-[#666] pr-[31px]">= 12,810.2</span>
-        </div>
-
-        <!-- HISTORY ITEM 2 -->
-        <div class="flex items-center justify-between px-[12px] pt-[27px]">
-          <span class="text-[15px] text-[#666]">sin(45) + log(100) x 2</span>
-          <span class="text-[15px] text-[#666] pr-[31px]">= 2.1213203436</span>
-        </div>
-
-        <!-- HISTORY ITEM 3 -->
-        <div class="flex items-center justify-between px-[12px] pt-[27px]">
-          <span class="text-[15px] text-[#666]">2,568 ÷ 12</span>
-          <span class="text-[15px] text-[#666] pr-[31px]">= 214</span>
-        </div>
-
-        <!-- HISTORY ITEM 4 -->
-        <div class="flex items-center justify-between px-[12px] pt-[27px]">
-          <span class="text-[15px] text-[#666]">(25 + 17) x 4</span>
-          <span class="text-[15px] text-[#666] pr-[31px]">= 93</span>
-        </div>
-
-        <!-- HISTORY ITEM 5 -->
-        <div class="flex items-center justify-between px-[12px] pt-[27px]">
-          <span class="text-[15px] text-[#666]">tan(60) x cos(30)</span>
-          <span class="text-[15px] text-[#666] pr-[31px]">= 1.5</span>
-        </div>
-
+      <div class="history-list h-[336px] w-full rounded-[11px] border border-[#303030] bg-black overflow-y-auto overflow-x-hidden p-0">
       </div>
 
       <!-- BOTTOM ACTION BAR -->
       <div class="h-[61px] -mx-[16px] mt-[18px] border-t border-[#202020] flex items-center justify-between px-[23px]">
 
         <!-- CLEAR HISTORY -->
-        <button class="text-[14px] text-red-500 hover:text-red-400 transition">
+        <button data-action="clear-history" class="text-[14px] text-red-500 hover:text-red-400 transition">
           Clear History
         </button>
 
         <!-- EXPORT -->
-        <button class="flex items-center gap-[12px] text-[14px] text-blue-500 hover:text-blue-400 transition">
+        <button data-action="export-history" class="flex items-center gap-[12px] text-[14px] text-blue-500 hover:text-blue-400 transition">
           <span>Export</span>
 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -114,6 +83,8 @@
       </div>
     </main>
   </div>
+
+  <script src="./history.js"></script>
 
   <!-- PAGE TRANSITION -->
   <script>
