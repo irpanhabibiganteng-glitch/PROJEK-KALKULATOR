@@ -13,10 +13,10 @@
   </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans overflow-x-hidden">
 
   <!-- MAIN WINDOW -->
-  <div class="w-[590px] max-w-full h-[532px] bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)]">
+  <div class="w-full max-w-[590px] min-h-[532px] bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)]">
 
     <!-- TOP NAVIGATION -->
     <div class="h-[51px] flex items-center border-b border-[#202020] bg-black">
@@ -31,19 +31,19 @@
       </div>
 
       <!-- Navigation -->
-      <div class="flex items-center h-full flex-1 text-[12px] whitespace-nowrap">
+      <div class="flex items-center h-full flex-1 text-[12px] gap-1 overflow-x-auto whitespace-nowrap">
 
-        <a href="./standard.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Standard</a>
+        <a href="./standard.html" class="flex-1 min-w-[70px] text-center text-gray-400 hover:text-white transition">Standard</a>
 
-        <a href="./scientific.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Scientific</a>
+        <a href="./scientific.html" class="flex-1 min-w-[70px] text-center text-gray-400 hover:text-white transition">Scientific</a>
 
-        <a href="./graph.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Graph</a>
+        <a href="./graph.html" class="flex-1 min-w-[60px] text-center text-gray-400 hover:text-white transition">Graph</a>
 
-        <a href="./programer.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Programmer</a>
+        <a href="./programer.html" class="flex-1 min-w-[80px] text-center text-gray-400 hover:text-white transition">Programmer</a>
 
-        <a href="./converter.html" class="flex-1 text-center text-gray-400 hover:text-white transition">Converter</a>
+        <a href="./conventer.html" class="flex-1 min-w-[80px] text-center text-gray-400 hover:text-white transition">Converter</a>
 
-        <a href="./history.html" class="relative flex-1 h-full flex items-center justify-center text-white">
+        <a href="./history.html" class="relative flex-1 min-w-[60px] h-full flex items-center justify-center text-white">
           History
           <span class="absolute left-1/2 -translate-x-1/2 bottom-[9px] w-[44px] h-[2px] bg-blue-500 rounded-full"></span>
         </a>

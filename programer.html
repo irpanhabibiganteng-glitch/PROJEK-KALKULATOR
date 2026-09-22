@@ -16,10 +16,10 @@
     </style>
   </head>
   <body
-    class="min-h-screen flex items-center justify-center p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans"
+    class="min-h-screen flex items-center justify-center p-4 sm:p-5 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans overflow-x-hidden"
   >
     <div
-      class="w-[580px] max-w-full bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)]"
+      class="w-full max-w-[580px] bg-black rounded-[18px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.55)]"
     >
       <div class="flex items-center gap-6 px-7 pt-5 pb-4">
         <div
@@ -29,7 +29,7 @@
           <span class="h-[2px] bg-gray-400 rounded"></span>
           <span class="h-[2px] bg-gray-400 rounded"></span>
         </div>
-        <div class="flex items-center gap-7 text-[12px] whitespace-nowrap">
+        <div class="flex items-center gap-4 text-[12px] flex-wrap justify-center sm:justify-start sm:gap-7 sm:whitespace-nowrap">
           <a
             href="./standard.html"
             class="text-gray-400 hover:text-white transition"
@@ -79,7 +79,7 @@
           <span class="text-[11px] text-gray-700 mr-2">MS</span>
         </div>
 
-        <div class="grid grid-cols-8 gap-1.5">
+        <div class="grid grid-cols-4 gap-1.5 sm:grid-cols-8">
           <div></div>
           <div></div>
           <div></div>
@@ -280,6 +280,8 @@
         </div>
       </div>
     </div>
+
+    <script src="./programer.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {

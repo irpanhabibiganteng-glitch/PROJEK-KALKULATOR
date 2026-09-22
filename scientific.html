@@ -19,9 +19,9 @@
 </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans overflow-x-hidden">
 
-<div class="flex w-[480px] max-w-full bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] flex-col md:flex-row">
+<div class="flex w-full max-w-[480px] bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] flex-col">
 
     <!-- CALCULATOR -->
     <div class="flex-[1.42] p-[22px] pb-5 flex flex-col min-w-0">
@@ -39,7 +39,7 @@
                 </div>
 
                 <!-- NAVIGATION -->
-                <div class="flex gap-3.5 text-[12px] flex-wrap">
+                <div class="flex gap-3.5 text-[12px] flex-wrap justify-center sm:justify-start">
 
                     <!-- STANDARD -->
                     <a href="./standard.html"
@@ -91,7 +91,7 @@
 
 
         <!-- SCIENTIFIC BUTTONS -->
-        <div class="grid grid-cols-8 gap-2 flex-1">
+        <div class="grid grid-cols-4 gap-2 flex-1 sm:grid-cols-8">
 
             <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">2nd</button>
             <button class="rounded-[10px] text-[#d7d8de] text-sm hover:bg-[#1d1e26] transition-colors">mr</button>
@@ -264,6 +264,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+<script src="./scientific.js"></script>
 
 </body>
 </html>

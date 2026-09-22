@@ -19,9 +19,9 @@
   </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans">
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-10 bg-[linear-gradient(135deg,#0b1226_0%,#16213e_45%,#1f2e52_100%)] font-sans overflow-x-hidden">
 
-  <div class="w-[440px] max-w-full bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] p-[22px] pb-5 flex flex-col">
+  <div class="w-full max-w-[440px] bg-[#131418] rounded-[22px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.55)] p-[22px] pb-5 flex flex-col">
 
     <!-- NAVBAR -->
     <div class="flex items-center justify-between mb-6">
@@ -36,7 +36,7 @@
         </div>
 
         <!-- NAVIGATION -->
-        <div class="flex gap-3.5 text-[12px] flex-wrap">
+        <div class="flex gap-3.5 text-[12px] flex-wrap justify-center sm:justify-start">
 
           <!-- STANDARD ACTIVE -->
           <span class="text-white cursor-pointer pb-2 relative after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-2.5 after:h-0.5 after:bg-blue-500 after:rounded-full">
@@ -80,7 +80,7 @@
         &nbsp;
       </div>
 
-      <div id="result" class="text-[40px] font-medium text-white tracking-wide truncate">
+      <div id="result" class="text-[32px] sm:text-[40px] font-medium text-white tracking-wide truncate">
         0
       </div>
 
@@ -134,6 +134,8 @@
 
     </div>
   </div>
+
+  <script src="./standard.js"></script>
 
   <!-- PAGE TRANSITION -->
   <script>
